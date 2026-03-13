@@ -1,0 +1,11 @@
+# PHPStorm
+.idea/
+
+# config file
+/config.php
+
+# user files
+/data/cache/*
+/data/uploads/*
+/wms/resources/data/info.php
+vendor

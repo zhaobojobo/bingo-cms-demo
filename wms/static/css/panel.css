@@ -1,0 +1,104 @@
+body {
+	height: 100%;
+	background:#2F2F2F;
+	overflow-x: hidden;
+}
+#panel-block {
+	margin: 0px auto;
+	position: relative;
+	min-height: 100vh;
+}
+#panel-bg {
+	display:none;
+	height: 750px;
+	background: #333;
+	border: 6px solid #999;
+	opacity: 0.75;
+	filter: alpha(opacity=75);
+}
+#panel-block .content {
+}
+#content-panel {
+	width: 98%;
+	margin: 0px auto;
+	padding-bottom: 10px;
+	padding-top: 10px;
+	font-family: '微軟正黑體','Noto Sans', sans-serif;
+	/*text-shadow: 1px 1px #000;*/
+	font-size: 13px;
+	color: #CCC;
+}
+#submit-form{ border:1px solid #4e4e4e; border-bottom:0; border-right:0;}
+#submit-form td {
+	padding: 14px 8px;
+	border-bottom: 1px solid #4e4e4e;
+	border-right: 1px solid #4e4e4e;
+	vertical-align: middle;
+}
+#submit-form .title {
+	padding-top: 10px;
+	padding-bottom: 10px;
+	background:#212121;
+	font-size:15px; font-weight:bold; color:#FFF;
+	
+}
+#submit-form tr:hover td{
+}
+#submit-form tr:hover td a {
+	color:#fff
+}
+#submit-form tr td:hover a {
+	color:#fff
+}
+#submit-form tr td a:hover {
+	color:#fff
+}
+.tabs_content #submit-form tr:hover td {
+	/*wallpaper:#2F2F2F; color:#FFF;*/
+	background: rgba(0,0,0,0.4);
+}
+.tabs_content #submit-form tr td:hover {
+	/*wallpaper:#555; color:#fff;*/
+	background: rgba(0,0,0,0.4);
+}
+td{transition: 0.5s ease;}
+#submit-form input, #submit-form select {
+	/*border: 0px hidden !important;
+	wallpaper: #CCC !important;
+	padding: 5px !important;
+	-webkit-border-radius: 5px !important;
+	-moz-border-radius: 5px !important;
+	border-radius: 5px !important;
+	-webkit-box-shadow: 0px 0px 2px 2px #999 !important;
+	box-shadow: 0px 0px 2px 2px #999 !important;*/
+}
+#submit-form input:hover, #submit-form select:hover {
+	/*wallpaper: #F0F0F0 !important;*/
+}
+#notification {
+	background: #D8FCD1 !important;
+	-webkit-border-radius: 5px !important;
+	-moz-border-radius: 5px !important;
+	border-radius: 5px !important;
+	padding: 10px !important;
+	color: #030 !important;
+	border: 3px #006600 solid !important;
+	text-align: center !important;
+	display: none
+}
+a:link, a:visited, a:hover, a:active {
+	color: #FFF;
+}
+.sub {
+	margin-left: 20px !important;
+}
+
+td input[type=text]:not(.no_css_input),td select,td textarea{
+	background:#2A2A2A !important;
+	color:#E3E3E3 !important;
+	border:0 !important;
+	padding:10px !important;
+	border-bottom:1px solid #464646 !important;
+	border-left:1px solid #464646 !important;
+	border-right:1px solid #464646 !important;
+}

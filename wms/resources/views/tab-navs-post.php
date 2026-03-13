@@ -1,0 +1,35 @@
+<?php
+
+use Admin\Helper;
+
+/** @var array $data */
+?>
+
+<div class="container-fluid">
+    <nav class="row">
+        <div class="col-lg-6 order-lg-1 p-0 mb-4 mb-lg-0 d-flex justify-content-lg-end">
+            <div class="form-inline">
+                <?php
+                if ($data['backListUrl']): ?>
+                    <a href="<?= $data['backListUrl'] ?>" class="submit btn btn-sm btn-primary mr-3">
+                        <?= Helper::_('Back') ?>
+                    </a>
+                <?php
+                endif ?>
+                <button type="button" class="submit btn btn-sm btn-primary"><?= Helper::_('Save') ?></button>
+            </div>
+        </div>
+        <div class="col-lg-6 order-lg-0 nav nav-tabs lang-tabs" id="nav-tabs" role="tablist">
+            <a class="nav-item nav-link active" id="general-tab" data-toggle="tab" href="#general" role="tab"
+               aria-controls="general" aria-selected="true">
+                <?= Helper::_('General') ?>
+            </a>
+            <?php foreach (LANGUAGES as $langId => $language) : ?>
+                <a class="nav-item nav-link" id="<?= $langId ?>-tab" data-toggle="tab" href="#<?= $langId ?>" role="tab"
+                   aria-controls="<?= $langId ?>" aria-selected="false">
+                    <?= $language ?>
+                </a>
+            <?php endforeach; ?>
+        </div>
+    </nav>
+</div>

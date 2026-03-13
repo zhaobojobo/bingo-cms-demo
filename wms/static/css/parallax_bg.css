@@ -1,0 +1,20 @@
+.parallax-wrapper{
+	position: absolute;
+	height: 100%;
+	min-height: 100vh;
+	overflow: hidden;
+	top: 0;
+	left: 0;
+	width: 100%;
+	z-index: -1;
+}
+.parallax{
+	position: relative;
+	background-image: url(../images/wallpaper/bg.jpg);
+	background-size: cover;
+	background-position: center;
+	height: 100%;
+	top: 0;
+	left: 0;
+	margin: 0;
+}

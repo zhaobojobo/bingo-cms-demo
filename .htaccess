@@ -1,0 +1,27 @@
+<IfModule mod_rewrite.c>
+RewriteEngine On
+RewriteCond %{REQUEST_METHOD} ^(TRACE|TRACK)
+RewriteRule .* - [F]
+#RewriteCond %{HTTPS} off
+#RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+RewriteRule ^(app|config|data|logs|vendor) - [F,L]
+RewriteRule (example|json|lock|md|sql)$ - [F,L]
+# 如果请求的是存在的文件或目录，则直接访问
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^ index.php [QSA,L]
+</IfModule>
+
+#<IfModule mod_headers.c>
+# 设置 X-Frame-Options 为 DENY，防止页面被嵌套
+#Header always append X-Frame-Options DENY
+
+# Cookie 安全性
+#Header always edit Set-Cookie "^(.*)" "$1; Secure; HttpOnly; SameSite=None"
+
+# 权限策略
+#Header always set Permissions-Policy "geolocation=(self), camera=()"
+
+# 内容安全策略 根据项目要求调整
+#Header always set Content-Security-Policy "default-src 'self'; script-src 'self' 'unsafe-inline' https://static.addtoany.com; style-src 'self' 'unsafe-inline'; img-src 'self' https://img.youtube.com/ https://www.google.com/; font-src 'self' data:; frame-src 'self' https://www.youtube.com/ https://www.google.com/ https://static.addtoany.com/; frame-ancestors 'self';"
+#</IfModule>

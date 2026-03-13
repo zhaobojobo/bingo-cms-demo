@@ -1,0 +1,14 @@
+.bingo-template {
+    position: relative;
+}
+.bingo-template-6 {
+
+}
+
+@media (min-width:768px) {
+    .bingo-template-6 .row .content {
+        min-height: 180px;
+        display: flex;
+        align-items: center
+    }
+}
