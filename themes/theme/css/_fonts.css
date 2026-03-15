@@ -1,0 +1,53 @@
+@font-face {
+  font-family: 'AdobeDevanagari';
+  src: url("../fonts/AdobeDevanagari.eot");
+  src: url("../fonts/AdobeDevanagari.eot?#iefix") format("embedded-opentype"), url("../fonts/AdobeDevanagari.woff2") format("woff2"), url("../fonts/AdobeDevanagari.woff") format("woff"), url("../fonts/AdobeDevanagari.ttf") format("truetype"), url("../fonts/AdobeDevanagari.svg#AdobeDevanagari") format("svg");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'MLingWaiPHK-Light';
+  src: url("../fonts/MLingWaiPHK-Light.eot");
+  src: url("../fonts/MLingWaiPHK-Light.eot?#iefix") format("embedded-opentype"), url("../fonts/MLingWaiPHK-Light.woff2") format("woff2"), url("../fonts/MLingWaiPHK-Light.woff") format("woff"), url("../fonts/MLingWaiPHK-Light.ttf") format("truetype"), url("../fonts/MLingWaiPHK-Light.svg#MLingWaiPHK-Light") format("svg");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'LTCBodoni';
+  src: url("../fonts/LTCBodoni.eot");
+  src: url("../fonts/LTCBodoni.eot?#iefix") format("embedded-opentype"), url("../fonts/LTCBodoni.woff2") format("woff2"), url("../fonts/LTCBodoni.woff") format("woff"), url("../fonts/LTCBodoni.ttf") format("truetype"), url("../fonts/LTCBodoni.svg#LTCBodoni") format("svg");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'FontsFree-Net-emperatriz-bold';
+  src: url("../fonts/FontsFree-Net-emperatriz-bold.eot");
+  src: url("../fonts/FontsFree-Net-emperatriz-bold.eot?#iefix") format("embedded-opentype"), url("../fonts/FontsFree-Net-emperatriz-bold.woff2") format("woff2"), url("../fonts/FontsFree-Net-emperatriz-bold.woff") format("woff"), url("../fonts/FontsFree-Net-emperatriz-bold.ttf") format("truetype"), url("../fonts/FontsFree-Net-emperatriz-bold.svg#FontsFree-Net-emperatriz-bold") format("svg");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Antro_Vectra';
+  src: url("../fonts/Antro_Vectra.eot");
+  src: url("../fonts/Antro_Vectra.eot?#iefix") format("embedded-opentype"), url("../fonts/Antro_Vectra.woff2") format("woff2"), url("../fonts/Antro_Vectra.woff") format("woff"), url("../fonts/Antro_Vectra.ttf") format("truetype"), url("../fonts/Antro_Vectra.svg#Antro_Vectra") format("svg");
+  font-weight: 100;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Emperatriz-Bold';
+  src: url("../fonts/Emperatriz-Bold.eot");
+  src: url("../fonts/Emperatriz-Bold.eot?#iefix") format("embedded-opentype"), url("../fonts/Emperatriz-Bold.woff2") format("woff2"), url("../fonts/Emperatriz-Bold.woff") format("woff"), url("../fonts/Emperatriz-Bold.ttf") format("truetype"), url("../fonts/Emperatriz-Bold.svg#Emperatriz-Bold") format("svg");
+  font-weight: 100;
+  font-style: normal;
+  font-display: swap;
+}

@@ -1,0 +1,298 @@
+
+/* line 13, sass/_header.scss */
+.headBoxFixed{
+  background-color: #0F2541;
+}
+
+.nav-between header{
+  background-color: #0F2541;
+}
+
+
+
+
+
+
+.online .shows.show .swlist{opacity: 1;}
+.nav-up header .logo img{max-width: 60%;}
+.nav-between header .logo img{max-width: 60%;}
+/*--------------------------------------------------------------
+# Navigation
+--------------------------------------------------------------*/
+
+
+
+
+.scorll_logo .site-title{background-color: #fff;}
+.scorll_logo .site-title .g-logo{display: block;}
+.scorll_logo .site-title .w-logo{display: none;}
+/* line 49, sass/_header.scss */
+
+/* line 191, sass/_footer.scss */
+
+
+/*--------------------------------------------------------------
+# Pages
+--------------------------------------------------------------*/
+/* line 1, sass/pages/_pages.scss */
+body,
+html {
+  background: #0F2541;
+  width: 100%;
+  height: 100%;
+}
+
+/* line 9, sass/pages/_pages.scss */
+
+/* line 15, sass/pages/_pages.scss */
+
+/* line 19, sass/pages/_pages.scss */
+.preload * {
+  
+}
+
+/* line 26, sass/pages/_pages.scss */
+.wrapper {
+  opacity: 1;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  /* &.loaded {*/
+  /*     opacity: 1;*/
+  /* }*/
+}
+
+/* line 36, sass/pages/_pages.scss */
+.barba-container {
+  position: relative;
+  height: 100%;
+}
+
+/* line 41, sass/pages/_pages.scss */
+scrollbar {
+  position: fixed !important;
+  height: 100vh;
+  width: 100%;
+}
+
+/* OBJECTFIT FALLBACK*/
+/* line 50, sass/pages/_pages.scss */
+img.object-fit-img {
+  -o-object-fit: cover;
+  object-fit: cover;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+/* line 58, sass/pages/_pages.scss */
+.object-fit-bg {
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  background-size: cover;
+}
+
+/* line 66, sass/pages/_pages.scss */
+.objectfit .object-fit-bg,
+.object-fit .object-fit-bg {
+  background-image: none !important;
+}
+
+/* line 73, sass/pages/_pages.scss */
+.no-objectfit img.object-fit-img,
+.no-object-fit img.object-fit-img {
+  display: none !important;
+}
+/* line 211, sass/pages/_pages.scss */
+.scroll-to {
+  position: absolute;
+  bottom: 16px;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+  transform: translateX(-50%);
+  width: 44px;
+  height: 44px;
+  cursor: pointer;
+  z-index: 10;
+}
+/* line 221, sass/pages/_pages.scss */
+.scroll-to svg {
+  fill: #fff;
+  display: block;
+  position: absolute;
+  top: 17px;
+  left: 14px;
+  width: 16px;
+  height: 10px;
+  -webkit-transition: 0.17s ease-in-out;
+  transition: 0.17s ease-in-out;
+}
+/* line 233, sass/pages/_pages.scss */
+.scroll-to:hover svg {
+  -webkit-transform: translateY(10px);
+  transform: translateY(10px);
+}
+@media (max-width: 1024px) {
+  /* line 1539, sass/pages/_pages.scss */
+  [data-top-bottom] {
+    -webkit-transform: none !important;
+    transform: none !important;
+  }
+}
+.reveal-fx .image-decal {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+.reveal-fx .image-decal.id-50pc {
+  transform: translateY(50%);
+}
+.aos-animate.repere + .reveal-fx .image-decal {
+  transform: translateY(0);
+}
+.aos-animate.repere + .reveal-fx .image-decal.id-50pc {
+  transition: transform 1s cubic-bezier(0, -0.01, 0.4, 1);
+}
+@-webkit-keyframes loader {
+  0% {
+    -webkit-transform: translate3d(-100%, 0, 0);
+    transform: translate3d(-100%, 0, 0);
+  }
+  10% {
+    -webkit-transform: translate3d(-100%, 0, 0);
+    transform: translate3d(-100%, 0, 0);
+  }
+  45% {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+  55% {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+  90% {
+    -webkit-transform: translate3d(100%, 0, 0);
+    transform: translate3d(100%, 0, 0);
+  }
+  100% {
+    -webkit-transform: translate3d(100%, 0, 0);
+    transform: translate3d(100%, 0, 0);
+  }
+}
+@keyframes loader {
+  0% {
+    -webkit-transform: translate3d(-100%, 0, 0);
+    transform: translate3d(-100%, 0, 0);
+  }
+  10% {
+    -webkit-transform: translate3d(-100%, 0, 0);
+    transform: translate3d(-100%, 0, 0);
+  }
+  45% {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+  55% {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+  90% {
+    -webkit-transform: translate3d(100%, 0, 0);
+    transform: translate3d(100%, 0, 0);
+  }
+  100% {
+    -webkit-transform: translate3d(100%, 0, 0);
+    transform: translate3d(100%, 0, 0);
+  }
+}
+/* CLOSE FORM*/
+@-webkit-keyframes close-before {
+  0% {
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
+  }
+  100% {
+    -webkit-transform: rotate(135deg);
+    transform: rotate(135deg);
+  }
+}
+@keyframes close-before {
+  0% {
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
+  }
+  100% {
+    -webkit-transform: rotate(135deg);
+    transform: rotate(135deg);
+  }
+}
+@-webkit-keyframes close-after {
+  0% {
+    -webkit-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+  }
+  100% {
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
+  }
+}
+@keyframes close-after {
+  0% {
+    -webkit-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+  }
+  100% {
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
+  }
+}
+
+#gnav {
+  width: 100vw;
+  height: 100vh;
+  background-color: #0F2541;
+  align-items: center;
+  -webkit-overflow-scrolling: touch;
+  overflow-y: auto;
+  background-position: center;
+  background-size: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10000;
+  transform: translate3d(0, 0, 0)
+}
+@keyframes gradient-ov-news {
+	0% {
+		background-size: 100% 1000%;
+		opacity: 0
+	}
+
+	100% {
+		background-size: 2000% 100%;
+		opacity: 1
+	}
+}
+
+@keyframes gradient-leave-news {
+	0% {
+		background-size: 100% 1000%;
+		opacity: 1
+	}
+
+	100% {
+		background-size: 500% 100%;
+		opacity: 0
+	}
+}
+#gnav {
+	opacity: 0;
+	pointer-events: none;
+	transition: opacity 0.65s cubic-bezier(0.165, 0.84, 0.44, 1)
+}
+
+.gnav #gnav {
+	opacity: 1;
+	pointer-events: inherit
+}
+
