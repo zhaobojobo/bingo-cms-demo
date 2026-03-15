@@ -87,7 +87,9 @@ class SubmissionController extends BaseController
                         Helper::getUrl('/attachment/' . $value),
                         $value
                     );
-                } else {
+                } else if($fields[$key]['input'] == 'input.checkbox') {
+                    $detail[$key]['value'] = implode(',', $value);
+                }else {
                     $detail[$key]['value'] = $value;
                 }
             }
