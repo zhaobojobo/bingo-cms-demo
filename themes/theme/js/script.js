@@ -366,4 +366,245 @@ var imgstop = new Swiper("#Service .inner .mySwiper", {
     $(".modal.fade .modal-content .modal-body .detail .items").hide();
   })
 
+$(function($) {
+    laydate.render({
+        elem: '#date'
+    });
+
+    let currentStep = 0;
+
+    const formData = {
+        // 装修资料
+        wyzk: '現住翻新',
+        dwzl: '',
+        address: '',
+        ft2: '',
+        hkd: '',
+        people: '',
+        num: '',
+        date: '',
+        // 设计方针
+        fg: [],
+        fg_other: '',
+        color: [],
+        color_other: '',
+        sszfg: '設計風格優先',
+        // 联络资料
+        name: '',
+        call: '',
+        email: '',
+        phone: '',
+        tj: [],
+        tj_other: '',
+        other: ''
+    };
+
+    const $stepContents = $('.contents');
+    const $progressBars = $('.probar .bar');
+    const $nextBtn = $('#next_step');
+    const $prevBtn = $('#previous_step');
+    const $submitBtn = $('#send2');
+
+    function initSteps() {
+        $stepContents.addClass('main-hide');
+        $stepContents.eq(0).removeClass('main-hide');
+        $prevBtn.hide();
+        $nextBtn.show();
+        $submitBtn.closest('.col-md-12').hide();
+        updateProgressBar(0);
+    }
+
+    function updateProgressBar(step) {
+        // step: 0,1,2
+        $progressBars.removeClass('active');
+        for (let i = 0; i <= step; i++) {
+            $progressBars.eq(i).addClass('active');
+        }
+    }
+
+    function goToStep(step) {
+        if (step < 0 || step > 2) return;
+
+        $stepContents.addClass('main-hide');
+        $stepContents.eq(step).removeClass('main-hide');
+
+        updateProgressBar(step);
+
+        if (step === 0) {
+            $prevBtn.hide();
+        } else {
+            $prevBtn.show();
+        }
+
+        if (step === 2) {
+            $nextBtn.hide();
+            $submitBtn.closest('.col-md-12').show();
+        } else {
+            $nextBtn.show();
+            $submitBtn.closest('.col-md-12').hide();
+        }
+
+        currentStep = step;
+    }
+
+    function collectStepData(step) {
+        switch (step) {
+            case 0: // 装修资料
+                formData.wyzk = $('input[name="wyzk"]:checked').val() || '';
+                formData.dwzl = $('select[name="dwzl"]').val() || '';
+                formData.address = $('input[name="address"]').val() || '';
+                formData.ft2 = $('input[name="ft2"]').val() || '';
+                formData.hkd = $('input[name="hkd"]').val() || '';
+                formData.people = $('input[name="people"]').val() || '';
+                formData.num = $('input[name="num"]').val() || '';
+                formData.date = $('input[name="date"]').val() || '';
+                break;
+            case 1:
+
+                formData.fg = [];
+                $('input[name="fg[]"]:checked').each(function() {
+                    formData.fg.push($(this).val());
+                });
+                formData.fg_other = $('input[name="fg_other"]').val() || '';
+
+                formData.color = [];
+                $('input[name="color[]"]:checked').each(function() {
+                    formData.color.push($(this).val());
+                });
+                formData.color_other = $('input[name="color_other"]').val() || '';
+
+                formData.sszfg = $('input[name="sszfg"]').val() || '設計風格優先';
+                break;
+            case 2:
+                formData.name = $('input[name="name"]').val() || '';
+                formData.call = $('select[name="call"]').val() || '';
+                formData.email = $('input[name="email"]').val() || '';
+                formData.phone = $('input[name="phone"]').val() || '';
+
+                formData.tj = [];
+                $('input[name="tj[]"]:checked').each(function() {
+                    formData.tj.push($(this).val());
+                });
+                formData.tj_other = $('input[name="tj_other"]').val() || '';
+                formData.other = $('textarea[name="other"]').val() || '';
+                break;
+        }
+    }
+
+    function validateStep(step) {
+        let fieldsToCheck = [];
+        if (step === 0) {
+            fieldsToCheck = ['address', 'ft2', 'hkd'];
+        } else if (step === 1) {
+            // 设计方针没有带星号的字段，默认返回 true
+            return true;
+        } else if (step === 2) {
+            fieldsToCheck = ['name', 'call', 'phone'];
+        }
+
+        for (let i = 0; i < fieldsToCheck.length; i++) {
+            const fieldName = fieldsToCheck[i];
+            let value = '';
+            if (fieldName === 'address') value = $('input[name="address"]').val() || '';
+            else if (fieldName === 'ft2') value = $('input[name="ft2"]').val() || '';
+            else if (fieldName === 'hkd') value = $('input[name="hkd"]').val() || '';
+            else if (fieldName === 'name') value = $('input[name="name"]').val() || '';
+            else if (fieldName === 'call') value = $('select[name="call"]').val() || '';
+            else if (fieldName === 'phone') value = $('input[name="phone"]').val() || '';
+
+            if (!value || value.trim() === '') {
+                let labelText = '';
+                if (fieldName === 'address') labelText = '詳細單位地址';
+                else if (fieldName === 'ft2') labelText = '單位面積';
+                else if (fieldName === 'hkd') labelText = '裝修預算';
+                else if (fieldName === 'name') labelText = '姓名';
+                else if (fieldName === 'call') labelText = '稱呼';
+                else if (fieldName === 'phone') labelText = '聯絡電話';
+
+                alert(`請填寫 ${labelText} (必填项)`);
+                if (fieldName === 'call') {
+                    $('select[name="call"]').focus();
+                } else {
+                    $(`input[name="${fieldName}"]`).focus();
+                }
+                return false;
+            }
+        }
+        return true;
+    }
+
+    function getSubmitData() {
+        collectStepData(0);
+        collectStepData(1);
+        collectStepData(2);
+        return formData;
+    }
+
+    $nextBtn.on('click', function(e) {
+        e.preventDefault();
+
+        collectStepData(currentStep);
+
+        if (!validateStep(currentStep)) {
+            return;
+        }
+
+        goToStep(currentStep + 1);
+    });
+
+    $prevBtn.on('click', function(e) {
+        e.preventDefault();
+        collectStepData(currentStep);
+        goToStep(currentStep - 1);
+    });
+
+    $('.tablpal .items').on('click', function() {
+        $('.tablpal .items').removeClass('active');
+        $(this).addClass('active');
+        const value = $(this).find('h3').text().trim();
+        $('#sszfg').val(value);
+    });
+
+    $submitBtn.on('click', function(e) {
+        e.preventDefault();
+
+        collectStepData(2);
+
+        if (!validateStep(2)) {
+            return;
+        }
+
+        const finalData = getSubmitData();
+
+        const $btn = $(this);
+        const originalText = $btn.text();
+        $btn.text('提交中...').prop('disabled', true);
+
+        $.ajax({
+            url: '/form/enquiry',
+            type: 'POST',
+            dataType: 'json',
+            data: finalData,
+            success: function(response) {
+                console.log(response);
+                if (response && response.status === true) {
+                    alert('提交成功！我們會盡快與您聯繫。');
+                    location.reload();
+                } else {
+                    alert('提交失敗：' + (response.message || '未知錯誤'));
+                }
+            },
+            error: function(xhr, status, error) {
+                console.error('AJAX 错误:', status, error);
+                alert('網絡錯誤，請稍後重試。');
+            },
+            complete: function() {
+                $btn.text(originalText).prop('disabled', false);
+            }
+        });
+    });
+
+    initSteps();
+
+});
 
