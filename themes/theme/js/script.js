@@ -367,8 +367,21 @@ var imgstop = new Swiper("#Service .inner .mySwiper", {
   })
 
 $(function($) {
+    function getLanguage() {
+        const path = window.location.pathname;
+        const segments = path.split('/').filter(s => s.length > 0);
+        const locale = segments.length > 0 ? segments[0] : 'en';
+
+        const validLocales = ['zh-HK', 'en'];
+        if (validLocales.includes(locale)) {
+            return locale;
+        }
+        return 'en';
+    }
+
     laydate.render({
-        elem: '#date'
+        elem: '#date',
+        lang: getLanguage()
     });
 
     let currentStep = 0;

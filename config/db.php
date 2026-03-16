@@ -3,7 +3,6 @@
 return [
     'driver'    => 'mysql',
     'host'      => DB_HOST,
-    'port'      => DB_PORT,
     'username'  => DB_USER,
     'database'  => DB_NAME,
     'password'  => DB_PASS,
